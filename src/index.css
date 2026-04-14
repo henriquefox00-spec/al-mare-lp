@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 20% 97%;
+    --foreground: 195 30% 15%;
+
+    --card: 40 15% 95%;
+    --card-foreground: 195 30% 15%;
+
+    --popover: 40 20% 97%;
+    --popover-foreground: 195 30% 15%;
+
+    --primary: 192 45% 25%;
+    --primary-foreground: 40 20% 97%;
+
+    --secondary: 38 25% 90%;
+    --secondary-foreground: 195 30% 15%;
+
+    --muted: 38 15% 92%;
+    --muted-foreground: 195 10% 45%;
+
+    --accent: 38 40% 75%;
+    --accent-foreground: 195 30% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 38 20% 88%;
+    --input: 38 20% 88%;
+    --ring: 192 45% 25%;
+
+    --radius: 0.375rem;
+
+    --champagne: 38 50% 78%;
+    --teal-deep: 192 50% 18%;
+    --teal-medium: 192 45% 25%;
+    --sand: 38 25% 90%;
+    --sand-light: 40 20% 97%;
+    --warm-gray: 30 5% 50%;
+    --seafoam: 170 25% 85%;
+
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Manrope', system-ui, sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-36 px-6 md:px-8;
+  }
+
+  .container-premium {
+    @apply max-w-[1280px] mx-auto;
+  }
+
+  .heading-hero {
+    font-family: var(--font-serif);
+    @apply text-4xl md:text-5xl lg:text-7xl font-light leading-tight tracking-tight;
+  }
+
+  .heading-section {
+    font-family: var(--font-serif);
+    @apply text-3xl md:text-4xl lg:text-5xl font-light leading-tight;
+  }
+
+  .heading-subsection {
+    font-family: var(--font-serif);
+    @apply text-xl md:text-2xl lg:text-3xl font-light;
+  }
+
+  .body-elegant {
+    font-family: var(--font-sans);
+    @apply text-base md:text-lg font-light leading-relaxed;
+  }
+
+  .body-small {
+    font-family: var(--font-sans);
+    @apply text-sm font-light tracking-wide;
+  }
+
+  .label-caps {
+    font-family: var(--font-sans);
+    @apply text-xs font-semibold tracking-[0.2em] uppercase;
+  }
+
+  .card-premium {
+    @apply bg-card border border-border rounded-sm p-8 md:p-10 transition-all duration-500;
+  }
+
+  .card-premium:hover {
+    @apply shadow-lg border-accent;
+  }
+
+  .btn-premium {
+    font-family: var(--font-sans);
+    @apply inline-flex items-center justify-center px-8 py-4 text-sm font-medium tracking-[0.15em] uppercase transition-all duration-300 rounded-sm;
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+
+  .btn-premium:hover {
+    background-color: hsl(var(--teal-deep));
+  }
+
+  .btn-outline-premium {
+    font-family: var(--font-sans);
+    @apply inline-flex items-center justify-center px-8 py-4 text-sm font-medium tracking-[0.15em] uppercase transition-all duration-300 rounded-sm border;
+    border-color: hsl(var(--primary));
+    color: hsl(var(--primary));
+  }
+
+  .btn-outline-premium:hover {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+
+  .divider-champagne {
+    @apply w-16 h-px mx-auto;
+    background-color: hsl(var(--champagne));
+  }
+
+  .gradient-teal {
+    background: linear-gradient(180deg, hsl(var(--teal-deep)) 0%, hsl(var(--teal-medium)) 100%);
+  }
+
+  .text-champagne {
+    color: hsl(var(--champagne));
+  }
+
+  .bg-sand {
+    background-color: hsl(var(--sand));
+  }
+
+  .bg-teal-deep {
+    background-color: hsl(var(--teal-deep));
+  }
+
+  .bg-seafoam {
+    background-color: hsl(var(--seafoam));
+  }
+
+  .text-warm-gray {
+    color: hsl(var(--warm-gray));
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
